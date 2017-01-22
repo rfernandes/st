@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char font[] = "xos4 Terminus:style=regular:size=9:antialias=false:autohint=false";
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -84,31 +84,26 @@ static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+  "#2f2e2d", /* Color0 */
+  "#a36666", /* Color1 */
+  "#90a57d", /* Color2 */
+  "#d7af87", /* Color3 */
+  "#7fa5bd", /* Color4 */
+  "#c79ec4", /* Color5 */
+  "#8bdbca", /* Color6 */
+  "#d0d0d0", /* Color7 */
+  "#4a4845", /* Color0Intense */
+  "#d78787", /* Color1Intense */
+  "#afbea2", /* Color2Intense */
+  "#e4c9af", /* Color3Intense */
+  "#a1bdce", /* Color4Intense */
+  "#d7beda", /* Color5Intense */
+  "#b1e7dd", /* Color6Intense */
+  "#efefef", /* Color7Intense */
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+  /* special colors */
+  [256] = "#31363b", /* background */
+  [257] = "#b2b2b2", /* foreground */
 };
 
 
@@ -116,10 +111,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-static unsigned int defaultfg = 7;
-static unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultfg = 257;
+static unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
+static unsigned int defaultrcs = 256;
 
 /*
  * Default shape of cursor
